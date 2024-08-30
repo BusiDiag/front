@@ -33,7 +33,7 @@ function Hero() {
                 <div className='w-full sm:w-auto lg:w-[60.8125rem] xl:ml-16'>
                   <img
                     src='https://tinyurl.com/mrem4k68'
-                    alt='Dashboard image'
+                    alt='Dashboard'
                     className='rounded-l-2xl w-full lg:h-auto'
                   />
                 </div>

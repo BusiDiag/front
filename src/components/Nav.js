@@ -35,7 +35,7 @@ function Nav() {
                 </li>
                 <li>
                   <Link
-                    to='javascript:;'
+                    to='/about'
                     className='text-gray-500 text-base lg:text-base font-medium hover:text-sky-700 transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left'
                   >
                     About us

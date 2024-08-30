@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 
 export default function BusinessStack(props) {
+  const id = props.id;
+
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -43,6 +45,7 @@ export default function BusinessStack(props) {
           <div className='font-light text-gray-500 text-base text-left mb-4'>
             {props.content}
           </div>
+          {/* TODO: go to results page */}
           <button className='bg-sky-600 rounded-full py-3 px-7 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit mb-4'>
             See more
           </button>
@@ -64,6 +67,7 @@ export default function BusinessStack(props) {
               Are you sure you want to delete {props.name}? This action cannot
               be undone.
             </div>
+            {/* TODO: delete button api call */}
             <button className='bg-sky-600 rounded-full py-3 px-7 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit mb-4'>
               Delete
             </button>

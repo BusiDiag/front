@@ -10,6 +10,7 @@ export default function BusiList() {
           <Link to='/business'>Add Business</Link>
         </button>
       </div>
+      {/* TODO: get business list from backend including id */}
       <table className='table-auto w-full'>
         <thead>
           <tr className='-mx-3'>
@@ -18,6 +19,7 @@ export default function BusiList() {
                 name='Business Name'
                 content='Lorem Ipsum Dolor Sit'
                 img='https://tinyurl.com/mrem4k68'
+                id='1'
               />
             </th>
             <th>
@@ -25,6 +27,7 @@ export default function BusiList() {
                 name='Business Name'
                 content='Lorem Ipsum Dolor Sit'
                 img='https://tinyurl.com/mrem4k68'
+                id='2'
               />
             </th>
           </tr>
@@ -34,6 +37,7 @@ export default function BusiList() {
                 name='Business Name'
                 content='Lorem Ipsum Dolor Sit'
                 img='https://tinyurl.com/mrem4k68'
+                id='3'
               />
             </th>
             <th>
@@ -41,6 +45,7 @@ export default function BusiList() {
                 name='Business Name'
                 content='Lorem Ipsum Dolor Sit'
                 img='https://tinyurl.com/mrem4k68'
+                id='4'
               />
             </th>
           </tr>
