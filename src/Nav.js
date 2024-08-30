@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <div className='Nav'>
-      <nav className='py-5 lg:sticky top-0 w-full bg-white z-10 transition-all duration-500'>
+      <nav className='py-5 lg:sticky top-0 w-full bg-white z-10 transition-all duration-500 shadow'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='w-full flex flex-col lg:flex-row'>
             <div className='flex justify-between lg:flex-row'>
