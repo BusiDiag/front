@@ -7,7 +7,7 @@ export default function Business() {
     <div className='BusiLis px-10'>
       <div className='flex justify-end mr-10 mt-8'>
         <button className='bg-sky-600 rounded-full py-3 px-10 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit'>
-          <Link to='/business'>Add Business</Link>
+          <Link to='/business/new'>Add Business</Link>
         </button>
       </div>
       {/* TODO: get business list from backend including id */}

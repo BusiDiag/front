@@ -5,6 +5,7 @@ import Hero from "./pages/Hero";
 import Business from "./pages/Business";
 import Result from "./pages/Result";
 import About from "./pages/About";
+import BusinessNew from "./pages/BusinessNew";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Hero />} />
         <Route path='business' element={<Business />} />
+        <Route path='business/new' element={<BusinessNew />} />
         <Route path='result/:id' element={<Result />} />
         <Route path='about' element={<About />} />
       </Routes>
