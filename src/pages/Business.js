@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BusinessStack from "./BusinessStack";
+import BusinessStack from "../components/BusinessStack";
 
-export default function BusiList() {
+export default function Business() {
   return (
     <div className='BusiLis px-10'>
       <div className='flex justify-end mr-10 mt-8'>

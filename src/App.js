@@ -1,8 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Nav from "./Nav";
-import Hero from "./Hero";
-import BusiList from "./business/BusiList";
+import Nav from "./components/Nav";
+import Hero from "./pages/Hero";
+import Business from "./pages/Business";
+import Result from "./pages/Result";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Hero />} />
-        <Route path='business' element={<BusiList />} />
+        <Route path='business' element={<Business />} />
+        <Route path='result/:id' element={<Result />} />
+        <Route path='about' element={<About />} />
       </Routes>
     </div>
   );

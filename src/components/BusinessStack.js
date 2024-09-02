@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Modal from "react-modal";
 
 export default function BusinessStack(props) {
@@ -46,9 +47,12 @@ export default function BusinessStack(props) {
             {props.content}
           </div>
           {/* TODO: go to results page */}
-          <button className='bg-sky-600 rounded-full py-3 px-7 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit mb-4'>
+          <Link
+            to={`/result/${id}`}
+            className='bg-sky-600 rounded-full py-3 px-7 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit mb-4'
+          >
             See more
-          </button>
+          </Link>
           <button
             onClick={openModal}
             className='ml-4 bg-sky-50 text-sky-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-sky-100 w-full md:w-fit'
