@@ -7,6 +7,7 @@ import Result from "./pages/Result";
 import About from "./pages/About";
 import BusinessNew from "./pages/BusinessNew";
 import Diagnosis from "./pages/Diagnosis";
+import DiagnosisForm from "./pages/DiagnosisForm";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path='/business/new' element={<BusinessNew />} />
         <Route path='/result/:id' element={<Result />} />
         <Route path='/about' element={<About />} />
-        <Route path='/diagnosis/:id' element={<Diagnosis />} />
+        <Route path='/diagnosis' element={<Diagnosis />} />
+        <Route path='/diagnosis/:id' element={<DiagnosisForm />} />
         <Route path='*' element={<Navigate replace to='/' />} />
       </Routes>
     </div>

@@ -27,10 +27,10 @@ function Nav() {
                 </li>
                 <li>
                   <Link
-                    to='/result'
+                    to='/diagnosis'
                     className='text-gray-500 text-base lg:text-base font-medium hover:text-sky-700 transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left'
                   >
-                    Results
+                    Diagnose
                   </Link>
                 </li>
                 <li>
