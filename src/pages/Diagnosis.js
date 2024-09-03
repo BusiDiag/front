@@ -23,7 +23,6 @@ export default function Diagnosis() {
             </div>
           </div>
           <div className='w-full mt-10 flex flex-col items-center lg:items-start ml-8'>
-            {/* Styled Select */}
             <select
               onChange={handleSelect}
               value={selectedBusiness}
@@ -39,7 +38,7 @@ export default function Diagnosis() {
               <option value='6'>Business 6</option>
             </select>
             <Link
-              to={`/result/${selectedBusiness}`}
+              to={`/diagnosis/${selectedBusiness}`}
               className='bg-sky-600 rounded-full py-3 px-10 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit'
             >
               Start diagnosis
