@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Nav from "./components/Nav";
 import Hero from "./pages/Hero";
 import Business from "./pages/Business";
@@ -19,7 +19,7 @@ function App() {
         <Route path='/result/:id' element={<Result />} />
         <Route path='/about' element={<About />} />
         <Route path='/diagnosis/:id' element={<Diagnosis />} />
-        <Route path='*' element={<Hero />} />
+        <Route path='*' element={<Navigate replace to='/' />} />
       </Routes>
     </div>
   );

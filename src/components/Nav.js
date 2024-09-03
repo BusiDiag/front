@@ -43,12 +43,18 @@ function Nav() {
                 </li>
               </ul>
               <div className='flex lg:items-center justify-start flex-col lg:flex-row max-lg:gap-4 lg:flex-1 lg:justify-end'>
-                <button className='bg-sky-50 text-sky-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-sky-100'>
+                <Link
+                  to='/login'
+                  className='bg-sky-50 text-sky-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-sky-100'
+                >
                   Login
-                </button>
-                <button className='bg-sky-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm lg:ml-5 hover:bg-sky-700'>
+                </Link>
+                <Link
+                  to='/signup'
+                  className='bg-sky-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm lg:ml-5 hover:bg-sky-700'
+                >
                   Sign up
-                </button>
+                </Link>
               </div>
             </div>
           </div>
