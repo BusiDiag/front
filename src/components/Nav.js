@@ -18,26 +18,17 @@ function Nav() {
             >
               <ul className='flex lg:items-center flex-col max-lg:gap-4 mt-4 lg:mt-0 lg:flex-row max-lg:mb-4'>
                 <li>
-                  <Link
-                    to='/business'
-                    className='text-gray-500 text-base lg:text-base font-medium hover:text-sky-700 transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left'
-                  >
+                  <Link to='/business' className='text-detail'>
                     Businesses
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to='/diagnosis'
-                    className='text-gray-500 text-base lg:text-base font-medium hover:text-sky-700 transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left'
-                  >
+                  <Link to='/diagnosis' className='text-detail'>
                     Diagnose
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to='/about'
-                    className='text-gray-500 text-base lg:text-base font-medium hover:text-sky-700 transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left'
-                  >
+                  <Link to='/about' className='text-detail'>
                     About us
                   </Link>
                 </li>

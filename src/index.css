@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /* Text */
+
+  .text-detail {
+    @apply text-gray-500 text-base lg:text-base font-medium hover:text-sky-700 transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left;
+  }
+
+  /* Buttons */
+
+  .btn {
+    @apply bg-sky-600 rounded-full py-3 px-10 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
