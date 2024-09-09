@@ -2,17 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+
 @layer components {
+  /* Main */
+
+  .main-section {
+    @apply lg:pt-8 pt-0 lg:pl-8 h-full mb-4;
+  }
+
+  .main-container-blue-rounded {
+    @apply rounded-tl-2xl lg:rounded-tl-2xl lg:rounded-bl-2xl bg-sky-50 py-5 overflow-hidden m-5 lg:m-0 2xl:py-10 xl:py-8;
+  }
+
+  /* Stack */
+
+  .stack-container-blue-rounded {
+    @apply bg-sky-50 rounded-3xl py-3 px-6;
+  }
+
   /* Text */
 
+  .text-title {
+    @apply py-8 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px];
+  }
+
   .text-detail {
-    @apply text-gray-500 text-base lg:text-base font-medium hover:text-sky-700 transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left;
+    @apply text-gray-500 text-base lg:text-base font-medium transition-all duration-500 mb-2 block lg:mr-6 md:mb-0 lg:text-left;
+  }
+
+  .text-title-sm {
+    @apply font-bold text-left text-2xl mb-4 mt-4;
+  }
+
+  .text-detail-sm {
+    @apply font-light text-gray-500 text-base text-left mb-4;
+  }
+
+  .text-content {
+    @apply text-gray-700 font-semibold;
   }
 
   /* Buttons */
 
   .btn {
     @apply bg-sky-600 rounded-full py-3 px-10 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit;
+  }
+
+  .btn-secondary {
+    @apply ml-4 bg-sky-50 text-sky-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-sky-100 w-full md:w-fit;
+  }
+
+  .input-text {
+    @apply text-base rounded-full text-gray-900 flex-1 py-4 px-6 shadow-[0px_15px_30px_-4px_rgba(16,_24,_40,_0.03)] md:shadow-none bg-white shadow-none placeholder:text-gray-400 focus:outline-none md:w-fit w-full;
   }
 }
 

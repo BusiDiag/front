@@ -10,14 +10,12 @@ export default function Diagnosis() {
 
   return (
     <div className='Diagnosis'>
-      <section className='w-full lg:pt-8 pt-0 lg:pl-8 h-full mb-4'>
-        <div className='w-full rounded-tl-2xl lg:rounded-tl-2xl lg:rounded-bl-2xl bg-sky-50 py-5 overflow-hidden m-5 lg:m-0 2xl:py-10 xl:py-8'>
+      <section className='main-section'>
+        <div className='main-container-blue-rounded'>
           <div className='w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
             <div className='w-full text-center lg:text-left'>
-              <h1 className='py-4 text-gray-900 font-bold font-manrope text-5xl leading-[70px]'>
-                Diagnosis
-              </h1>
-              <p className='text-gray-500 text-lg'>
+              <h1 className='text-title'>Diagnosis</h1>
+              <p className='text-detail'>
                 Select the business you want to diagnose
               </p>
             </div>
@@ -37,10 +35,7 @@ export default function Diagnosis() {
               <option value='5'>Business 5</option>
               <option value='6'>Business 6</option>
             </select>
-            <Link
-              to={`/diagnosis/${selectedBusiness}`}
-              className='bg-sky-600 rounded-full py-3 px-10 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit'
-            >
+            <Link to={`/diagnosis/${selectedBusiness}`} className='btn'>
               Start diagnosis
             </Link>
           </div>

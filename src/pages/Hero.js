@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 function Hero() {
   return (
     <div className='Hero'>
-      <section className='lg:pt-8 pt-0 lg:pl-8 h-full mb-4'>
-        <div className='rounded-tl-2xl lg:rounded-tl-2xl lg:rounded-bl-2xl bg-sky-50 py-5 overflow-hidden m-5 lg:m-0 2xl:py-10 xl:py-8'>
+      <section className='main-section'>
+        <div className='main-container-blue-rounded'>
           <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
             <div className='grid grid-cols-1 gap-14 items-center lg:grid-cols-12 lg:gap32'>
               <div className='w-full xl:col-span-5 lg:col-span-6 2xl:-mx-5 xl:-mx-0'>
-                <h1 className='py-8 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px]'>
+                <h1 className='text-title'>
                   Spot Problems,
                   <br />
                   <span className='text-sky-600'>Seize Opportunities</span>
                 </h1>
-                <p className='text-gray-500 text-lg text-center lg:text-left'>
+                <p className='text-detail'>
                   Diagnose your business anytime — even before you launch.
                 </p>
                 <form className='relative p-1.5 my-10 flex items-center gap-y-4 h-auto md:h-16 flex-col md:flex-row justify-between rounded-full md:shadow-[0px 15px 30px -4px rgba(16, 24, 40, 0.03)] border border-transparent md:bg-white transition-all duration-500 hover:border-sky-600 focus-within:border-sky-600'>
@@ -22,7 +22,7 @@ function Hero() {
                     type='email'
                     name='email'
                     placeholder='Enter email to get started'
-                    className='text-base rounded-full text-gray-900 flex-1 py-4 px-6 shadow-[0px 15px 30px -4px rgba(16, 24, 40, 0.03)] md:shadow-none bg-white md:bg-transparent shadow-none placeholder:text-gray-400 focus:outline-none md:w-fit w-full'
+                    className='input-text'
                   />
                   <input
                     type='submit'

@@ -21,13 +21,13 @@ export default function Result() {
 
   return (
     <div className='Result'>
-      <section className='lg:pt-8 pt-0 lg:pl-8 h-full mb-4'>
+      <section className='main-section'>
         <div className='flex justify-end mr-10 mb-4'>
-          <button className='bg-sky-600 rounded-full py-3 px-10 text-base font-semibold text-white hover:bg-sky-700 transition-all duration-500 w-full md:w-fit'>
+          <button className='btn'>
             <Link to={`/diagnosis/${id}`}>Start new diagnosis</Link>
           </button>
         </div>
-        <div className='rounded-tl-2xl lg:rounded-tl-2xl rounded-bl-2xl lg:rounded-bl-2xl bg-sky-50 py-5 overflow-hidden m-5 lg:m-0 2xl:py-10 xl:py-8'>
+        <div className='main-container-blue-rounded'>
           <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
             <div className='w-full'>
               <h1 className='py-4 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px]'>
