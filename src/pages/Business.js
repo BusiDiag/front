@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { fetchBusinesses } from "../api";
 
 import BusinessStack from "../components/BusinessStack";
 
@@ -8,19 +8,7 @@ export default function Business() {
   const [businesses, setBusinesses] = useState([]);
 
   useEffect(() => {
-    const fetchBusinesses = () => {
-      axios
-        .get("/api/businesses")
-        .then((response) => {
-          setBusinesses(response.data);
-          console.log("Fetched businesses:" + response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching businesses:", error);
-        });
-    };
-
-    fetchBusinesses();
+    fetchBusinesses().then((data) => setBusinesses(data));
   }, []);
 
   return (

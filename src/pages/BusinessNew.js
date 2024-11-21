@@ -1,6 +1,18 @@
 import React from "react";
+import createBusiness from "../api/CreateBusiness";
 
 export default function BusinessNew() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    const response = createBusiness(data);
+
+    console.log("Sent: ", data);
+    console.log("Received: ", response);
+  };
+
   return (
     <div className='BusinessNew w-full'>
       <section className='main-section'>
@@ -23,7 +35,11 @@ export default function BusinessNew() {
                     type='text'
                     placeholder='Description'
                   />
-                  <input className='btn' type='submit' />
+                  <input
+                    className='btn'
+                    type='submit'
+                    onSubmit={handleSubmit}
+                  />
                 </form>
               </div>
             </div>
