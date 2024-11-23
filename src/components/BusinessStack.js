@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 
+import deleteBusinesses from "../api/DeleteBusiness";
+
 export default function BusinessStack(props) {
+  console.log(props);
   const id = props.id;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +34,12 @@ export default function BusinessStack(props) {
     },
   };
 
+  const deleteBusinessesWrapper = (id) => {
+    deleteBusinesses(id);
+    setIsOpen(false);
+    window.location.reload();
+  };
+
   return (
     <div className='BusinessStack'>
       <section className='flex lg:items-start py-5 px-10'>
@@ -41,8 +50,9 @@ export default function BusinessStack(props) {
             src={props.img}
             alt={props.name}
           />
-          <div className='text-detail-sm'>{props.content}</div>
-          {/* TODO: go to results page */}
+          <div className='text-detail-sm mb-4'>{props.description}</div>
+
+          {/* TODO: Add link to result */}
           <Link to={`/result/${id}`} className='btn'>
             See more
           </Link>
@@ -59,8 +69,9 @@ export default function BusinessStack(props) {
               Are you sure you want to delete {props.name}? This action cannot
               be undone.
             </div>
-            {/* TODO: delete button api call */}
-            <button className='btn'>Delete</button>
+            <button className='btn' onClick={() => deleteBusinessesWrapper(id)}>
+              Delete
+            </button>
             <button onClick={closeModal} className='btn-secondary'>
               Cancel
             </button>

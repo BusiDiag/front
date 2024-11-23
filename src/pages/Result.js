@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+
+import fetchResult from "../api/FetchResult";
+import ResultStack from "../components/ResultStack";
 
 export default function Result() {
   const { id } = useParams();
-  const data = [
-    { name: "080124", uv: 4000, ev: 2400, sv: 2400, wv: 2000 },
-    { name: "081324", uv: 3000, ev: 3000, sv: 1800, wv: 2500 },
-    { name: "082524", uv: 2000, ev: 1500, sv: 2000, wv: 3000 },
-    { name: "082724", uv: 1000, ev: 2000, sv: 2200, wv: 1500 },
-  ];
+  const [results, setResults] = useState([]);
+  const data = useMemo(() => [], []);
 
+  const setData = useCallback(() => {
+    results.forEach((result) => {
+      const _data = {
+        name: result.question,
+        // TODO: Make these scores according to backend
+        uv: result.score,
+        ev: result.score,
+        sv: result.score,
+        wv: result.score,
+      };
+      data.push(_data);
+    });
+  }, [data, results]);
+
+  useEffect(() => {
+    fetchResult(id).then((data) => setResults(data));
+    setData();
+  }, [id, setData]);
+
+  if (!results) return <div>Loading...</div>;
   return (
     <div className='Result'>
       <section className='main-section'>
@@ -37,148 +47,7 @@ export default function Result() {
                 Diagnosis results for {id}
               </p>
             </div>
-            <div className='w-full mt-10'>
-              {/* Total Graph Centered */}
-              <div className='flex justify-center mb-10'>
-                <div className='w-full md:w-3/4 lg:w-2/3'>
-                  <p className='text-gray-900 text-xl mb-4 text-center'>
-                    Total
-                  </p>
-                  <LineChart
-                    width={800}
-                    height={400}
-                    data={data}
-                    margin={{ top: 40, right: 30, left: 20, bottom: 5 }}
-                    className='bg-white rounded-lg shadow-md'
-                  >
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <XAxis />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line
-                      type='monotone'
-                      dataKey='uv'
-                      stroke='#8884d8'
-                      dot={{ stroke: "#8884d8", strokeWidth: 2 }}
-                    />
-                    <Line
-                      type='monotone'
-                      dataKey='ev'
-                      stroke='#82ca9d'
-                      dot={{ stroke: "#82ca9d", strokeWidth: 2 }}
-                    />
-                    <Line
-                      type='monotone'
-                      dataKey='sv'
-                      stroke='#ffc658'
-                      dot={{ stroke: "#ffc658", strokeWidth: 2 }}
-                    />
-                    <Line
-                      type='monotone'
-                      dataKey='wv'
-                      stroke='#ff7300'
-                      dot={{ stroke: "#ff7300", strokeWidth: 2 }}
-                    />
-                  </LineChart>
-                </div>
-              </div>
-              {/* Individual Graphs */}
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10'>
-                <div className='flex justify-center'>
-                  <div className='w-full md:w-3/4 lg:w-2/3'>
-                    <p className='text-gray-900 text-xl mb-4 text-center'>UV</p>
-                    <LineChart
-                      width={400}
-                      height={300}
-                      data={data}
-                      margin={{ top: 20, right: 20, left: 20, bottom: 5 }}
-                      className='bg-white rounded-lg shadow-md'
-                    >
-                      <CartesianGrid strokeDasharray='3 3' />
-                      <XAxis />
-                      <YAxis />
-                      <Tooltip />
-                      <Line
-                        type='monotone'
-                        dataKey='uv'
-                        stroke='#8884d8'
-                        dot={{ stroke: "#8884d8", strokeWidth: 2 }}
-                      />
-                    </LineChart>
-                  </div>
-                </div>
-                <div className='flex justify-center'>
-                  <div className='w-full md:w-3/4 lg:w-2/3'>
-                    <p className='text-gray-900 text-xl mb-4 text-center'>EV</p>
-                    <LineChart
-                      width={400}
-                      height={300}
-                      data={data}
-                      margin={{ top: 20, right: 20, left: 20, bottom: 5 }}
-                      className='bg-white rounded-lg shadow-md'
-                    >
-                      <CartesianGrid strokeDasharray='3 3' />
-                      <XAxis />
-                      <YAxis />
-                      <Tooltip />
-                      <Line
-                        type='monotone'
-                        dataKey='ev'
-                        stroke='#82ca9d'
-                        dot={{ stroke: "#82ca9d", strokeWidth: 2 }}
-                      />
-                    </LineChart>
-                  </div>
-                </div>
-                <div className='flex justify-center'>
-                  <div className='w-full md:w-3/4 lg:w-2/3'>
-                    <p className='text-gray-900 text-xl mb-4 text-center'>SV</p>
-                    <LineChart
-                      width={400}
-                      height={300}
-                      data={data}
-                      margin={{ top: 20, right: 20, left: 20, bottom: 5 }}
-                      className='bg-white rounded-lg shadow-md'
-                    >
-                      <CartesianGrid strokeDasharray='3 3' />
-                      <XAxis />
-                      <YAxis />
-                      <Tooltip />
-                      <Line
-                        type='monotone'
-                        dataKey='sv'
-                        stroke='#ffc658'
-                        dot={{ stroke: "#ffc658", strokeWidth: 2 }}
-                      />
-                    </LineChart>
-                  </div>
-                </div>
-                <div className='flex justify-center'>
-                  <div className='w-full md:w-3/4 lg:w-2/3'>
-                    <p className='text-gray-900 text-xl mb-4 text-center'>WV</p>
-                    <LineChart
-                      width={400}
-                      height={300}
-                      data={data}
-                      margin={{ top: 20, right: 20, left: 20, bottom: 5 }}
-                      className='bg-white rounded-lg shadow-md'
-                    >
-                      <CartesianGrid strokeDasharray='3 3' />
-                      <XAxis />
-                      <YAxis />
-                      <Tooltip />
-                      <Line
-                        type='monotone'
-                        dataKey='wv'
-                        stroke='#ff7300'
-                        dot={{ stroke: "#ff7300", strokeWidth: 2 }}
-                      />
-                    </LineChart>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ResultStack data={data} />
           </div>
         </div>
       </section>

@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import fetchBusinesses from "../api/FetchBusinesses";
 
 export default function Diagnosis() {
   const [selectedBusiness, setSelectedBusiness] = useState("");
+  const [businesses, setBusinesses] = useState([]);
 
   const handleSelect = (event) => {
     setSelectedBusiness(event.target.value);
   };
+
+  useEffect(() => {
+    fetchBusinesses().then((data) => setBusinesses(data));
+  }, []);
 
   return (
     <div className='Diagnosis'>
@@ -26,14 +32,12 @@ export default function Diagnosis() {
               value={selectedBusiness}
               className='block w-full md:w-1/2 lg:w-1/3 bg-white border border-gray-300 rounded-lg shadow-sm py-2 px-3 text-base text-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition duration-150 ease-in-out mb-4'
             >
-              {/* TODO: Get the list of businesses from the backend */}
               <option value=''>Select a business</option>
-              <option value='1'>Business 1</option>
-              <option value='2'>Business 2</option>
-              <option value='3'>Business 3</option>
-              <option value='4'>Business 4</option>
-              <option value='5'>Business 5</option>
-              <option value='6'>Business 6</option>
+              {businesses.map((business) => (
+                <option key={business.id} value={business.id}>
+                  {business.name}
+                </option>
+              ))}
             </select>
             <Link to={`/diagnosis/${selectedBusiness}`} className='btn'>
               Start diagnosis

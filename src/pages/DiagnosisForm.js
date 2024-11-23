@@ -6,6 +6,7 @@ export default function DiagnosisForm() {
   const { id } = useParams();
   const [responses, setResponses] = useState({});
 
+  // TODO: Fetch questions from the backend
   // Extract questions from the imported JSON data
   const questions = questionsData.questions;
 

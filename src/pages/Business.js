@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchBusinesses } from "../api";
+import fetchBusinesses from "../api/FetchBusinesses";
 
 import BusinessStack from "../components/BusinessStack";
 
@@ -25,7 +25,7 @@ export default function Business() {
             key={business.id}
             id={business.id}
             name={business.name}
-            content={business.content}
+            description={business.description}
           />
         ))}
       </div>
